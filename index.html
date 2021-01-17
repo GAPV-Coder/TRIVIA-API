@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+			crossorigin="anonymous"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./styles.css" />
+		<title>TRIVIA|GAME</title>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg">
+			<div class="container-fluid">
+				<a class="navbar-brand href="#">TRIVIA|GAME</a>
+			</div>
+		</nav>
+		<section>
+			<div class="container row">
+				<div class="col-lg-12">
+					<h1 class="principal-title">Hello! Welcome TRIVIA|GAME</h1>
+				</div>
+				
+				<div class="col-lg-12">
+					<h5 class="text-description">
+						This application generates questions of different categories, through an API.
+						Play, have fun and put your knowledge to the test. Good luck...
+					</h5>
+					<h6 class="development">🛠 Open Trivia DB - Project in development 🛠</h6>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div id="container1" style="margin: 30px">
+				<form onsubmit="event.preventDefault(), getQuestions()">
+					<!-- Select number questions -->
+					<label style="margin-top: 20px" for="number" class="NQ"
+						>Number Questions (max - 50)</label
+					>
+					<br>
+					<input
+						style="width: 20%; margin-bottom: 10px"
+						class="form-select"
+						id="numberQ"
+						type="number"
+						value="10"
+						min="1"
+						max="50"
+					/>
+					<!-- Select category -->
+					<select
+						id="select-category"
+						style="width: 20%; margin-bottom: 10px"
+						class="form-select"
+						aria-label="Default select example"
+					>
+						<option selected>Select category</option>
+					</select>
+					<!-- Select difficulty -->
+					<select
+						id="select-difficulty"
+						style="width: 20%; margin-bottom: 10px"
+						class="form-select"
+						aria-label="Default select example"
+					>
+						<option selected>Select difficulty</option>
+						<option id="easy" value="easy">Easy</option>
+						<option id="medium" value="medium">Medium</option>
+						<option id="hard" value="hard">Hard</option>
+					</select>
+					<!-- select type -->
+					<select
+						id="select-type"
+						style="width: 20%; margin-bottom: 10px"
+						class="form-select"
+						aria-label="Default select example"
+					>
+						<option selected>Select type</option>
+						<option id="true/false" value="boolean">True or False</option>
+						<option id="optionM" value="multiple">Multiple choice</option>
+					</select>
+					<br>
+					<button
+						style="margin: 10px auto"
+						class="btn btn-primary justify-content-center"
+					>
+						Get Questions
+					</button>
+				</form>
+			</div>
+			<div id="containerII">
+				<form id="formII" onsubmit="event.preventDefault(), submitQ()">
+					<!-- Here is the content -->
+				</form>
+			</div>
+			<script src="./app.js" defer type="text/javascript"></script>
+		</section>
+	</body>
+</html>
